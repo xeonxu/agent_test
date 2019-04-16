@@ -1,0 +1,4 @@
+<launch>
+    <node name="server_node" pkg="agent_test" type="mini_factory_server_node" respawn="true" output="screen"/>
+    <node name="robot1_node" pkg="agent_test" type="robot1_node" respawn="true" output="screen"/>
+</launch>
