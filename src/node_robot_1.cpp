@@ -4,7 +4,7 @@
 bool task1(agent_test::task::Request  &req,
          agent_test::task::Response &res)
 {
-    ROS_INFO("Hello: %s", req.messages.c_str());
+    ROS_INFO("Hello from robot1: %s", req.messages.c_str());
     res.result = true;
     return true;
 }
