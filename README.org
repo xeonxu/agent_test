@@ -1,0 +1,14 @@
+* Agent task test
+** Compiling
+Clone this repo into a catkin workspace's src directory. Then go to the root of catkin workspace. Type compile command:
+#+BEGIN_SRC bash
+catkin_make --pkg agent_test install
+#+END_SRC
+** Running nodes
+If it is compiled with no errors, all nodes will be installed to install directory successfully. Then just running all node with following commands:
+#+BEGIN_SRC bash
+. install/setup.bash
+roslaunch agent_test task.launch
+#+END_SRC
+** Result checking
+After server node and robot agent nodes starting, you can confirm all tasks' status from terminal output.
