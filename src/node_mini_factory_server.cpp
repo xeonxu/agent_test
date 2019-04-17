@@ -4,6 +4,7 @@
 #include <common.h>
 #include <sstream>
 #include <cstdlib>
+#include <thread>
 
 static const char* tasks[5] = {
     "task1",
@@ -68,11 +69,11 @@ int main(int argc, char **argv)
     {
         if (task_idx < 5) {
             for (int i = 0; i < sizeof(robot_states)/sizeof(robot_states[0]); ++i) {
-                ROS_DEBUG("robot %d status %d", i, robot_states[i]);
                 if (RB_STS_READY == robot_states[i]) {
-                    ROS_INFO("task start");
-                    do_task(i+1);       
-                    ROS_INFO("task done");
+                    ROS_DEBUG("robot %d status %d", i, robot_states[i]);
+                    std::thread *t = new std::thread(do_task, i+1);
+                    t->detach();
+                    delete t;
                 }
             }
         }
