@@ -25,7 +25,7 @@ int do_task(const int robot_num)
 {
     agent_test::task srv;
 
-    ROS_INFO("do task");
+    ROS_DEBUG("do task");
     robot_states[robot_num-1] = RB_STS_EXEC;
     srv.request.messages = tasks[task_idx++];
 
@@ -36,7 +36,7 @@ int do_task(const int robot_num)
 
     if (client.call(srv))
     {
-        ROS_INFO("Result: %d", (long int)srv.response.result);
+        ROS_DEBUG("Result: %d", (long int)srv.response.result);
     }
     else
     {
