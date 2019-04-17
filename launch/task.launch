@@ -1,4 +1,5 @@
 <launch>
     <node name="node_mini_factory_server" pkg="agent_test" type="mini_factory_server_node" respawn="true" output="screen"/>
     <node name="node_robot_1" pkg="agent_test" type="robot1_node" respawn="true" output="screen"/>
+    <node name="node_robot_2" pkg="agent_test" type="robot2_node" respawn="true" output="screen"/>
 </launch>

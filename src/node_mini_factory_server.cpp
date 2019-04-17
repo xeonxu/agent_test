@@ -15,7 +15,7 @@ static const char* tasks[5] = {
 
 static int task_idx = 0;
 
-static int robot_states[1] = {1};
+static int robot_states[2] = {1};
 
 static ros::NodeHandle *np;
 // ros::ServiceClient client;
@@ -62,7 +62,8 @@ int main(int argc, char **argv)
 
     np = &nh;
 
-    // client = nh.serviceClient<agent_test::task>("agent_task_1");
+    ros::Duration(1).sleep();
+
     while (ros::ok())
     {
         if (task_idx < 5) {
